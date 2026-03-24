@@ -1160,13 +1160,13 @@ async function getCurrentAccessToken() {
         alert("Upload a GLB / glTF file first.");
         return;
     }
-    if (modelFile.size > 10485760) { // 10 MB in bytes
+    if (modelFile.size > 5242880) { // 5 MB in bytes
         alert("File is too large. Maximum file size for shared models is 5 MB. Upgrade to ViewAR Pro to share & embed models up to 50 MB.");
         return;
     }
 
         // Validate USDZ file size upfront if it exists
-    if (typeof usdzFile !== 'undefined' && usdzFile && usdzFile.size > 10485760) {
+    if (typeof usdzFile !== 'undefined' && usdzFile && usdzFile.size > 5242880) {
         alert("USDZ file is too large. Maximum file size for shared models is 5 MB.");
         return;
     }
